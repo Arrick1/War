@@ -26,10 +26,22 @@ class Deck {
         }
         return this.deck;
     }
-    
+    shuffle(){
+        let x = this.deck.length, y, z;
+        while (x) {
+            z = Math.floor(Math.random() * x--);
+            y = this.deck[x];
+            this.deck[x] = this.deck[z];
+            this.deck[z] = y;
+        }
+        return this.deck;
+    };
 };
 
 
 let deck = new Deck;
-deck.buildDeck(suits, values);
-console.log(deck)
+
+
+
+deck.buildDeck(suits, values)
+console.log(deck.shuffle())
