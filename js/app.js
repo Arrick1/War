@@ -5,7 +5,8 @@
 
 //Building a deck of cards 
 let suits = ["spades", "diamonds", "clubs", "hearts"];
-let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+let faces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+
 
 class Cards {
     constructor(suit, value){
@@ -17,10 +18,12 @@ class Cards {
 class Deck {
     constructor(){
         this.deck = [];
+        this.playerCards = [];
+        this.computerCards = [];
     }
-    buildDeck(suits, values) { 
+    buildDeck(suits, faces) { 
         for (let suit of suits){
-            for (let value of values){
+            for (let value of faces){
                 this.deck.push(new Cards(suit, value))
             }
         }
@@ -36,12 +39,29 @@ class Deck {
         }
         return this.deck;
     };
+
+    split() {
+        this.playerCards = this.deck.splice(0, 26);
+        this.computerCards = this.deck.splice(0)
+    }
+    
 };
+    
 
 
-let deck = new Deck;
 
 
+gameInit = () =>{
+    let deck = new Deck;
+    deck.buildDeck(suits, faces);
+    deck.shuffle();
+    deck.split();
+    console.log(deck.playerCards);
+    console.log(deck.computerCards) 
 
-deck.buildDeck(suits, values)
-console.log(deck.shuffle())
+}
+
+
+$('.newGame').on('click', gameInit)
+
+$('.deal').on('click', )
