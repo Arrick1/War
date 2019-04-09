@@ -24,11 +24,12 @@ class Deck {
     buildDeck(suits, faces) { 
         for (let suit of suits){
             for (let value of faces){
-                this.deck.push(new Cards(suit, value))
+                this.deck.push(new Cards(suit, value));
             }
         }
         return this.deck;
     }
+    // this will shuffle the deck 
     shuffle(){
         let x = this.deck.length, y, z;
         while (x) {
@@ -39,29 +40,82 @@ class Deck {
         }
         return this.deck;
     };
-
+    
     split() {
         this.playerCards = this.deck.splice(0, 26);
         this.computerCards = this.deck.splice(0)
-    }
-    
+    };
+
+    compare(){
+        let comp1 = this.checkVal(this.computerCards[0].value);
+        let play1 = this.checkVal(this.playerCards[0].value);
+
+        if ((play1 % 13) < (comp1 % 13)) {
+            console.log("computer wins this round");
+            this.computerCards.push(this.playerCards.splice(0,1).shift(this.playerCards[0]));
+            shift()
+            // console.log(this.playerCards, this.computerCards);
+            
+        } 
+         else if ((comp1 % 13) < (play1 % 13)) {
+            console.log("player wins this round")
+            this.playerCards.push( this.computerCards.splice(0,1).shift(this.computerCards[0]));
+             shift()
+            // console.log(this.playerCards[0].value, this.computerCards[0].value);
+        }           
+        else if ((comp1 % 14) === (play1 % 14)){
+            console.log("War");
+            war()
+        }
+     }
+
+     checkVal(val) {
+         if(val === "J") {
+             return 11
+         } else if (val === "Q") {
+             return 12
+         } else if (val === "K") {
+             return 13
+         } else if (val === "A") {
+             return 14
+         } else {
+             return (val)
+         }
+     }
+     shift (){
+        if ((play1 % 13) < (comp1 % 13)){
+            this.computerCards.push(this.computerCards.shift([0]))
+
+        } if ((comp1 % 13) < (play1 % 13)){
+            this.playerCards.push(this.playerCards.shift([0]))
+        } 
+     }
 };
     
 
+let deck;
 
+const war = () => {
+    
+}
 
-
-gameInit = () =>{
-    let deck = new Deck;
+const gameInit = () =>{
+    deck = new Deck;
     deck.buildDeck(suits, faces);
     deck.shuffle();
     deck.split();
     console.log(deck.playerCards);
-    console.log(deck.computerCards) 
+    console.log(deck.playerCards[0].value);
+    console.log(deck.computerCards);
+    console.log(deck.computerCards[0].value); 
 
 }
 
+const battle = () => {
+    deck.compare()
+}
 
+//Buttons
 $('.newGame').on('click', gameInit)
 
-$('.deal').on('click', )
+$('.deal').on('click', battle)
