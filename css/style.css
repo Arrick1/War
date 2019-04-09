@@ -13,7 +13,10 @@ body {
     color: white;
     font-size: 80px;
     text-transform: uppercase;
-    text-decoration-line: line-through
+    text-decoration-line: line-through;
 
 }
 
+#gameContainer {
+
+}

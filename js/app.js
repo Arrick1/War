@@ -71,7 +71,7 @@ class Deck {
         }           
         else if ((comp1 % 13) === (play1 % 13)){
             console.log("War");
-            war()
+            this.playerCards.push()
         }
      }
 
