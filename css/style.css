@@ -1,9 +1,19 @@
+
+body {
+    background-image: url("images/511284.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
 #header {
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: rgb(52, 60, 40);
+    color: white;
     font-size: 80px;
     text-transform: uppercase;
     text-decoration-line: line-through
 
 }
+

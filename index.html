@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="card-deck-css/css/cardstarter.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 </head>
-<body background="images/511284.jpg">
+<body>
     <div id="header">   
         <header>War!</header>
     </div> 
@@ -12,23 +13,30 @@
     <div id="game-container">
         <div id="info">
             <div class="game header">
-                <div class="pDeck"></div>
+                <div class="pDeck">
+                    <!-- <img src="css/images/card back image.png" alt=""> -->
+                </div>
                 <div class="result"></div>
-                <div class="cDeck"></div>
+                <div class="cDeck">
+                        <!-- <img src="css/images/card back image.png" alt=""> -->
+                </div>
             </div>
             <div class="playField">
-                <div class="playerDeck"></div>
+                <div class="playerDeck">
+                    <img src="" alt="">
+                </div>
                 <div class="playerCard"></div>
                 <div class= "gameButtons">
                     <button class="deal">Deal</button>
                     <br>
-                    <button class="newGame">New Game</button>
+                    <button class="newGame" onClick = "this.style.visibility= 'hidden';">New Game</button>
                 </div>
                 <div class="playerDeck"></div>
                 <div class="playerCard"></div>
             </div>
         </div>
-
+        <!-- <div class='card diamonds A west'></div>
+        <div class='card diamonds r07'></div> -->
 
 
 
