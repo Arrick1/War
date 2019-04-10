@@ -48,7 +48,7 @@ class Deck {
     // this whill split the deck and push them into two arrays for the computer and player
     split() {
         this.playerCards = this.deck.splice(0, 26);
-        $("#pDeck").attr("src","css/images/card back image.png")
+        
         this.computerCards = this.deck.splice(0)
     };
 
@@ -81,7 +81,7 @@ class Deck {
             console.log(this.checkVal(deck.computerCards[3].value))
             if (playWar == compWar){
                 console.log(playWar,compWar)
-                // this.computerCards.push(this.playerCards.splice(1,4));
+                this.computerCards.push(this.playerCards.splice(1,4));
 
             }
         
@@ -134,8 +134,10 @@ const gameInit = () =>{
     $('.info').fadeOut("slow")
     deck = new Deck;
     deck.buildDeck(suits, faces);
-    // deck.shuffle();
+    deck.shuffle();
     deck.split();
+    $(".pDeck").append('<img src="css/images/card back image.png" width="70" height="90">');
+    $(".cDeck").append('<img src="css/images/card back image.png" width="70" height="90">');
     console.log(deck.playerCards);
     console.log(deck.playerCards[0].value);
     console.log(deck.computerCards);
