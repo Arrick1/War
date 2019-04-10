@@ -14,3 +14,6 @@ Each play will lay 3 cards down and flip the 4th card. The player with the highe
 
 Gameover 
 The game will end when one player has all the cards.  
+
+
+Technologies used: HTML, Jquery, CSS, Javascript

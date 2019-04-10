@@ -61,7 +61,9 @@ class Deck {
             const computerCard = this.computerCards.shift()
             const playerCard = this.playerCards.shift()
             console.log("computer wins this round");
-            this.computerCards.push(computerCard, playerCard)
+            this.computerCards.push(computerCard, playerCard);
+            console.log(this.playerCards[0].value);
+            console.log(this.computerCards[0].value);
          } 
 
          //this will check if the player is the winner
@@ -70,26 +72,37 @@ class Deck {
             const playerCard = this.playerCards.shift()
             console.log("player wins this round")
             this.playerCards.push(computerCard,playerCard)
+            console.log(this.playerCards[0].value);
+            console.log(this.computerCards[0].value);
          }  
-         // this will check to see if the computer and player have the same card and begin war         
+         // this will check to see if the computer and player have the same card and begin war then push the all cards played in this round to the winners deck.         
         else if ((play1) === (comp1)){
             console.log("War");
-
-            // const playWar = this.checkVal(this.playerWar[3].value)
-            // const
-            // this.checkVal(this.computerWar[3].value)
-            // if (){
-
-            // }
             this.playerWar.push(this.playerCards.splice(1,4));
             this.computerWar.push(this.computerCards.splice(1,4));
-            
+            const compWar1 = this.computerWar[0][3].value;
+            const playWar1 = this.playerWar[0][3].value;
+            if (playWar1 < compWar1){
+                const computerCard = this.computerCards.shift()
+                const playerCard = this.playerCards.shift()
+                this.computerCards.push(computerCard, playerCard);
+                this.computerCards.push(this.playerWar.splice(0,3)[0]);
+                this.playerCards.push(this.computerWar.splice(0,3)[0]);
+                console.log("Computer Wins");
+            }
+            else if(compWar1 < playWar1) {
+                const computerCard = this.computerCards.shift()
+                const playerCard = this.playerCards.shift()
+                this.playerCards.push(computerCard, playerCard);
+                this.playerCards.push(this.playerWar.splice(0,3)[0]);
+                this.computerCards.push(this.computerWar.splice(0,3)[0]);
+                console.log("Player Wins"); 
+            }
 
-            console.log(this.playerWar, this.computerWar);
+           
         }
-
-        console.log(this.playerCards[0].value);
-        console.log(this.computerCards[0].value);
+        console.log(this.playerCards);
+        console.log(this.computerCards);
      }
 
      checkVal(val) {
@@ -105,27 +118,13 @@ class Deck {
              return (val)
          }
      }
-     
-        // if (playWar < compWar){
-        //     const compWin = this.compWar.splice(0,3)
-        //     const playWin = this.playWar.splice(0,3)
-        //     this.computerCards.push(compWin, playWin)
-
-        // }
-        // else if (compWar < playWar){
-        //     const computerCard = this.computerCards.shift()
-        //     const playerCard = this.playerCards.shift()
-
-        // } 
-         
-         
-    //  }
 };
 
     
 
 let deck;
 
+// this will begin the game functions 
 const gameInit = () =>{
     $('.info').fadeOut("slow")
     deck = new Deck;
@@ -146,6 +145,7 @@ const battle = () => {
 }
 
 //Buttons
+// this start the game 
 $('.newGame').on('click', gameInit)
 
 
