@@ -9,16 +9,28 @@
     <div id="header">   
         <header>War!</header>
     </div> 
+    <div class ="info">
+        <button class="newGame" onClick = "this.style.visibility= 'hidden';">New Game</button> 
+            <h3>Gameplay</h3>
+            <p> Cards are ranked from 2 - Ace with Ace being the highests raking card. 
+            <p> At the begnning of each round, each player will flip their card and the player with the highest ranking card will win the round and collect both cards.</p> 
+            <p>If each player flips the same card War is initiated.</p>
+
+           <p>War Each play will lay 3 cards down and flip the 4th card. The player with the highest ranking 4th card will win the round and take all of the cards used during war. If the 4th card fliped is the same for each player another round of war is engaged.</p>
+            
+            <p>The game will end when one player has all the cards.</p>
+        </div>
+
     
     <div id="gameContainer">
         <div id="info">
-            <div class="game header">
+            <div class="gameHeader">
                 <div class="pDeck">
-                    <!-- <img src="css/images/card back image.png" alt=""> -->
+                    <img src="" width="70" height="90">
                 </div>
                 <div class="result"></div>
                 <div class="cDeck">
-                        <!-- <img src="css/images/card back image.png" alt=""> -->
+                        <!-- <img src="css/images/card back image.png" width="70" height="90"> -->
                 </div>
             </div>
             <div class="playField">
@@ -28,8 +40,7 @@
                 <div class="playerCard"></div>
                 <div class= "gameButtons">
                     <button class="deal">Deal</button>
-                    <br>
-                    <button class="newGame" onClick = "this.style.visibility= 'hidden';">New Game</button>
+
                 </div>
                 <div class="playerDeck"></div>
                 <div class="playerCard"></div>
