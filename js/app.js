@@ -48,7 +48,6 @@ class Deck {
     // this whill split the deck and push them into two arrays for the computer and player
     split() {
         this.playerCards = this.deck.splice(0, 26);
-        
         this.computerCards = this.deck.splice(0)
     };
 
@@ -76,24 +75,21 @@ class Deck {
         else if ((play1) === (comp1)){
             console.log("War");
 
-            const playWar = this.checkVal(deck.playerCards[3].value)
-            const compWar = this.checkVal(deck.computerCards[3].value)
-            console.log(this.checkVal(deck.computerCards[3].value))
-            if (playWar == compWar){
-                console.log(playWar,compWar)
-                this.computerCards.push(this.playerCards.splice(1,4));
+            // const playWar = this.checkVal(this.playerWar[3].value)
+            // const
+            // this.checkVal(this.computerWar[3].value)
+            // if (){
 
-            }
-        
-            // this.playerWar.push(this.playerCards.splice(1,4));
-            // this.computerWar.push(this.computerCards.splice(1,4));
+            // }
+            this.playerWar.push(this.playerCards.splice(1,4));
+            this.computerWar.push(this.computerCards.splice(1,4));
             
 
-            // console.log(this.playerWar, this.computerWar);
+            console.log(this.playerWar, this.computerWar);
         }
 
-        // console.log(this.playerCards[0].value);
-        // console.log(this.computerCards[0].value);
+        console.log(this.playerCards[0].value);
+        console.log(this.computerCards[0].value);
      }
 
      checkVal(val) {
@@ -154,4 +150,4 @@ $('.newGame').on('click', gameInit)
 
 
 
-// $('.deal').on('click', battle)
+$('.deal').on('click', battle)
