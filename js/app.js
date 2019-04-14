@@ -57,7 +57,6 @@ class Deck {
         $('#pDeck').removeClass()
         $('#cDeck').removeClass()
        
-        console.log(this.playerCards[0], this.computerCards[0]);
         $('#pDeck').toggleClass(`${pCard.suit[0]}${pCard.value} card`)
         $('#cDeck').toggleClass(`${cCard.suit[0]}${cCard.value} card`)
                 
@@ -75,8 +74,7 @@ class Deck {
             const playerCard = this.playerCards.shift()
             $("#round").text("Computer wins this round!")
             this.computerCards.push(computerCard, playerCard);
-            console.log(this.playerCards[0].value);
-            console.log(this.computerCards[0].value);
+            
          } 
 
          //this will check if the player is the winner
@@ -99,16 +97,16 @@ class Deck {
                 const computerCard = this.computerCards.shift()
                 const playerCard = this.playerCards.shift()
                 this.computerCards.push(computerCard, playerCard);
-                this.computerCards = [...this.computerCards,...this.playerWar];
-                this.playerCards = [...this.playCards,...this.computerWar];
+                this.computerCards = [...this.computerCards,...this.playerWar[0]];
+                this.playerCards = [...this.playCards,...this.computerWar[0]];
                 $('#round').append("Computer Wins");
             }
             else if(compWar1 < playWar1) {
                 const computerCard = this.computerCards.shift()
                 const playerCard = this.playerCards.shift()
                 this.playerCards.push(computerCard, playerCard);
-                this.playerCards = [...this.playerWar, ...this.playerCards];
-                this.computerCards =[...this.computerCards, ...this.computerWar];
+                this.playerCards = [...this.playerWar[0], ...this.playerCards];
+                this.computerCards =[...this.computerCards, ...this.computerWar[0]];
                 $("#round").text("Player Wins"); 
             }
 
@@ -133,6 +131,23 @@ class Deck {
              return (val)
          }
      }
+
+     score(){
+        const playScore = this.playerCards.length; 
+        const compScore = this.computerCards.length;
+        console.log(playScore,compScore)
+        $('.score').text(playScore,compScore)
+
+     }
+     win(){
+        const playWin = this.playerCards.length;
+        const compWin = this.computerCards.length; 
+        if(playWin === 0){
+            alert("Computer has won WAR! yould you like to play again")
+         }else if(compWin === 0){
+            alert("You won WAR! yould you like to play again")
+         } 
+     }
 };
 
 
@@ -146,8 +161,8 @@ const gameInit = () =>{
     deck.shuffle();
     deck.split();
     deck.display();
-    // $(".pDeck").append('<img src="css/images/card back image.png" width="100" height="120">');
-    // $(".cDeck").append('<img src="css/images/card back image.png" width="100" height="120">');
+    deck.score()
+    deck.win()
     console.log(deck.playerCards);
     console.log(deck.playerCards[0].value);
     console.log(deck.computerCards);
@@ -155,17 +170,11 @@ const gameInit = () =>{
 
 }
 
-// const playerHand = this.playerCards[0]
-// const computerCard = this.computercards[0]
-
-const display = () => {
-    // this.playerHand.push
-
-}
-
 const battle = () => {
     deck.display();
     deck.compare()
+    deck.score()
+    deck.win()
     
 }
 
