@@ -25,12 +25,13 @@
     <div id="gameContainer">
         <div id="info">
             <div class="gameHeader">
-                <div class="pDeck">
-                    <!-- <img src="" width="70" height="90"> -->
+                <div  id="pDeck" class="pDeck card back-red " >
+                    <div></div>
                 </div>
-                <div class="result"></div>
-                <div class="cDeck">
-                        <!-- <img src="css/images/card back image.png" width="70" height="90"> -->
+                <div class="cDeck card back-blue" id="cDeck"></div>
+                <div>
+                    <p class="result">Result</p> 
+                    <p id="round"></p>
                 </div>
             </div>
             <div class="playField">
@@ -44,8 +45,6 @@
                     <button value="Refresh Page" onClick="window.location.reload()">New Game</button>
 
                 </div>
-                <div class="playerDeck"></div>
-                <div class="playerCard"></div>
             </div>
         </div>
         <!-- <div class='card diamonds A west'></div>

@@ -5,7 +5,7 @@
 
 //Building a deck of cards 
 const suits = ["spades", "diamonds", "clubs", "hearts"];
-const faces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+const faces = ["A", "02", "03", "04", "05", "06", "07", "08", "09", "10", "J", "Q", "K"];
 
 
 class Cards {
@@ -48,8 +48,21 @@ class Deck {
     // this whill split the deck and push them into two arrays for the computer and player
     split() {
         this.playerCards = this.deck.splice(0, 26);
-        this.computerCards = this.deck.splice(0)
+        this.computerCards = this.deck.splice(0);
+        
     };
+    display(){
+        let pCard = this.playerCards[0]
+        let cCard = this.computerCards[0]
+        $('#pDeck').removeClass()
+        $('#cDeck').removeClass()
+       
+        console.log(this.playerCards[0], this.computerCards[0]);
+        $('#pDeck').toggleClass(`${pCard.suit[0]}${pCard.value} card`)
+        $('#cDeck').toggleClass(`${cCard.suit[0]}${cCard.value} card`)
+                
+
+    }
 
     //this will compare the first card in the array of player and computer whoever has the higher, both cards will be pushed to the end of the winners array 
     compare(){
@@ -60,7 +73,7 @@ class Deck {
         if (play1 < comp1) {
             const computerCard = this.computerCards.shift()
             const playerCard = this.playerCards.shift()
-            console.log("computer wins this round");
+            $("#round").text("Computer wins this round!")
             this.computerCards.push(computerCard, playerCard);
             console.log(this.playerCards[0].value);
             console.log(this.computerCards[0].value);
@@ -70,14 +83,14 @@ class Deck {
          else if (comp1 < play1) {
             const computerCard = this.computerCards.shift()
             const playerCard = this.playerCards.shift()
-            console.log("player wins this round")
+            $("#round").text("Player wins this round!")
             this.playerCards.push(computerCard,playerCard)
             console.log(this.playerCards[0].value);
             console.log(this.computerCards[0].value);
          }  
          // this will check to see if the computer and player have the same card and begin war then push the all cards played in this round to the winners deck.         
         else if ((play1) === (comp1)){
-            console.log("War");
+            $("#round").text("War  ");
             this.playerWar.push(this.playerCards.splice(1,4));
             this.computerWar.push(this.computerCards.splice(1,4));
             const compWar1 = this.computerWar[0][3].value;
@@ -86,22 +99,24 @@ class Deck {
                 const computerCard = this.computerCards.shift()
                 const playerCard = this.playerCards.shift()
                 this.computerCards.push(computerCard, playerCard);
-                this.computerCards.push(this.playerWar.splice(0,3)[0]);
-                this.playerCards.push(this.computerWar.splice(0,3)[0]);
-                console.log("Computer Wins");
+                this.computerCards = [...this.computerCards,...this.playerWar];
+                this.playerCards = [...this.playCards,...this.computerWar];
+                $('#round').append("Computer Wins");
             }
             else if(compWar1 < playWar1) {
                 const computerCard = this.computerCards.shift()
                 const playerCard = this.playerCards.shift()
                 this.playerCards.push(computerCard, playerCard);
-                this.playerCards.push(this.playerWar.splice(0,3)[0]);
-                this.computerCards.push(this.computerWar.splice(0,3)[0]);
-                console.log("Player Wins"); 
+                this.playerCards = [...this.playerWar, ...this.playerCards];
+                this.computerCards =[...this.computerCards, ...this.computerWar];
+                $("#round").text("Player Wins"); 
             }
 
            
         }
         console.log(this.playerCards);
+        this.playerWar = []
+        this.computerWar = []
         console.log(this.computerCards);
      }
 
@@ -120,7 +135,6 @@ class Deck {
      }
 };
 
-    
 
 let deck;
 
@@ -131,8 +145,9 @@ const gameInit = () =>{
     deck.buildDeck(suits, faces);
     deck.shuffle();
     deck.split();
-    $(".pDeck").append('<img src="css/images/card back image.png" width="70" height="90">');
-    $(".cDeck").append('<img src="css/images/card back image.png" width="70" height="90">');
+    deck.display();
+    // $(".pDeck").append('<img src="css/images/card back image.png" width="100" height="120">');
+    // $(".cDeck").append('<img src="css/images/card back image.png" width="100" height="120">');
     console.log(deck.playerCards);
     console.log(deck.playerCards[0].value);
     console.log(deck.computerCards);
@@ -140,8 +155,18 @@ const gameInit = () =>{
 
 }
 
+// const playerHand = this.playerCards[0]
+// const computerCard = this.computercards[0]
+
+const display = () => {
+    // this.playerHand.push
+
+}
+
 const battle = () => {
+    deck.display();
     deck.compare()
+    
 }
 
 //Buttons
