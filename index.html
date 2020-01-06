@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One|Bree+Serif|Roboto|Sanchez&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="card-deck-css/css/cardstarter.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    
 </head>
 <body>
-    <div id="header">   
-        <header>War!</header>
-    </div> 
-    <div class ="info">
-        <button class="newGame" onClick = "this.style.visibility= 'hidden';">Play</button> 
-            <h3>Gameplay</h3>
-            <p> Cards are ranked from 2 - Ace with Ace being the highests raking card. 
-            <p> At the begnning of each round, each player will flip their card and the player with the highest ranking card will win the round and collect both cards.</p> 
-            <p>If each player flips the same card War is initiated.</p>
+   <div class='rules-container'>
 
-           <p>War Each play will lay 3 cards down and flip the 4th card. The player with the highest ranking 4th card will win the round and take all of the cards used during war. If the 4th card fliped is the same for each player another round of war is engaged.</p>
-            
-            <p>The game will end when one player has all the cards.</p>
+        <div class= 'gameText' id="header"> 
+            <header>War!</header>
+        </div> 
+
+        <div class='gameText' id='rules'>
+                <h3 id='instructions'>Instructions</h3>
+
+                <p> Cards are ranked from 2 - Ace with Ace being the highest raking card.</p> 
+                
+                <p> At the beginning of each round, each player will flip their card and the player with the highest ranking card will win the round and collect both cards.</p> 
+                
+                <p>If each player flips the same card War is initiated.</p>
+                
+                <p>War Each play will lay 3 cards down and flip the 4th card. The player with the highest ranking 4th card will win the round and take all of the cards used during war. If the 4th card flipped is the same for each player another round of war is engaged.</p>
+                
+                <p>The game will end when one player has all the cards.</p>
         </div>
 
+        <div>
+            <button class="newGame"  id='play-btn' onClick = "this.style.visibility= 'hidden';">New Game</button> 
+        </div>
+   </div> 
     
-    <div id="gameContainer">
-        <div id="info">
-            <div id="playField">
-                <h2>Players</h2>
-                <div  id="pDeck" class="pDeck card back-red " >
-                    <div></div>
-                </div>
-                <h2>Computer</h2>
+    <div class="gameContainer">
+        
+       <div> 
+            <h2>Player</h2>
+            <span  id="pDeck" class="pDeck card back-red"></span>  
+       </div> 
+        
+                    <h2>Computer</h2>
+                    <span  id="cDeck" class="cDeck card back-blue"></span>
+
+               
                 <h4 id="score"></h4>
-                <div class="cDeck card back-blue" id="cDeck"></div>
+              
                 <div>
                     <p class="result">Result</p> 
                     <p id="round"></p>
@@ -41,19 +55,8 @@
                     <button class="deal">Deal</button>
                     <br>
                     <button value="Refresh Page" onClick="window.location.reload()">New Game</button>
-
-                </div>
-            </div>
+           
         </div>
-        <!-- <div class='card diamonds A west'></div>
-        <div class='card diamonds r07'></div> -->
-
-
-
-
-
-
-
 
 
     </div>

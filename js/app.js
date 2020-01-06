@@ -24,7 +24,8 @@ class Deck {
         this.computerWar = [];
         
     }
-    // this build a deck once the user clicks new game 
+
+// this build a deck once the user clicks new game 
     buildDeck(suits, faces) { 
         for (let suit of suits){
             for (let value of faces){
@@ -33,7 +34,9 @@ class Deck {
         }
         return this.deck;
     }
-    // this will shuffle the deck 
+
+
+// this will shuffle the deck 
     shuffle(){
         let x = this.deck.length, y, z;
         while (x) {
@@ -45,12 +48,12 @@ class Deck {
         return this.deck;
     };
     
-    // this whill split the deck and push them into two arrays for the computer and player
+// this whill split the deck and push them into two arrays for the computer and player
     split() {
         this.playerCards = this.deck.splice(0, 26);
-        this.computerCards = this.deck.splice(0);
-        
+        this.computerCards = this.deck.splice(0);   
     };
+
     display(){
         let pCard = this.playerCards[0]
         let cCard = this.computerCards[0]
@@ -58,12 +61,10 @@ class Deck {
         $('#cDeck').removeClass()
        
         $('#pDeck').toggleClass(`${pCard.suit[0]}${pCard.value} card`)
-        $('#cDeck').toggleClass(`${cCard.suit[0]}${cCard.value} card`)
-                
-
+        $('#cDeck').toggleClass(`${cCard.suit[0]}${cCard.value} card`)              
     }
 
-    //this will compare the first card in the array of player and computer whoever has the higher, both cards will be pushed to the end of the winners array 
+//this will compare the first card in the array of player and computer whoever has the higher, both cards will be pushed to the end of the winners array 
     compare(){
         const comp1 = this.checkVal(this.computerCards[0].value);
         const play1 = this.checkVal(this.playerCards[0].value);
@@ -155,7 +156,7 @@ let deck;
 
 // this will begin the game functions 
 const gameInit = () =>{
-    $('.info').fadeOut("slow")
+    $('.rules-container').fadeOut("slow")
     deck = new Deck;
     deck.buildDeck(suits, faces);
     deck.shuffle();
@@ -168,14 +169,19 @@ const gameInit = () =>{
     console.log(deck.computerCards);
     console.log(deck.computerCards[0].value); 
 
+    var gameContainerDOM = document.querySelector('.gameContainer')
+    
+    gameContainerDOM.style.display = 'block'
+
+    // var diceDOM = document.querySelector('.dice')
+
 }
 
 const battle = () => {
     deck.display();
     deck.compare()
     deck.score()
-    deck.win()
-    
+    deck.win() 
 }
 
 //Buttons
