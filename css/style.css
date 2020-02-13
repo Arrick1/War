@@ -18,11 +18,14 @@ body {
 
 #rules{
     font-family: 'sanchez'; 
-    display: inline-block;
-    position: fixed;
     color: white;
     background-color: rgba(83, 83, 83, 0.8);
-    height: 345px;
+    height: 300px;
+    text-indent: 0%;
+    border: none;
+    width: 
+    /* margin-left: 23px;
+    margin-right: 23px; */
 }
 
 #instructions{
@@ -47,6 +50,7 @@ body {
     text-transform: uppercase;
     padding: 10px;
     top: 520px;
+    opacity: 0.5;
 }
 
 

@@ -169,9 +169,9 @@ const gameInit = () =>{
     console.log(deck.computerCards);
     console.log(deck.computerCards[0].value); 
 
-    var gameContainerDOM = document.querySelector('.gameContainer')
+    // var gameContainerDOM = document.querySelector('.gameContainer')
     
-    gameContainerDOM.style.display = 'block'
+    // gameContainerDOM.style.display = 'block'
 
     // var diceDOM = document.querySelector('.dice')
 

@@ -2,6 +2,9 @@
 <html>
 <head>
     
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    
     <link href="https://fonts.googleapis.com/css?family=Bowlby+One|Bree+Serif|Roboto|Sanchez&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="card-deck-css/css/cardstarter.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -13,25 +16,30 @@
     <!-- HOME SCREEN -->
    <div class='rules-container'>
 
-        <div class= 'gameText' id="header"> 
+        <div class= "gameText" id="header"> 
             <header>War!</header>
         </div> 
 
-        <div class='gameText' id='rules'>
-                <h3 id='instructions'>Instructions</h3>
+        <div class="card" id="rules">
+            <h3 class="card-header" id='instructions'>Instructions:</h3>
+                <div class="card-body">
+                    <p>Cards are ranked from 2 - Ace with Ace being the highest raking card. </p>
+                    <p> At the beginning of each round, each player will flip their card and the player with the highest ranking card will win the round and collect both cards.</p> 
+                    <p>If each player flips the same card War is initiated.</p>
+                    <p>During war Each player will lay 3 cards down and flip the 4th card. The player with the highest ranking 4th card will win the round and take all of the cards used during war. If the 4th card flipped is the same for each player another round of war is engaged.</p>
+                    <p>The game will end when one player has all the cards.</p>
+                    <button class="newGame"  id='play-btn' onClick = "this.style.visibility= 'hidden';">New Game</button> 
+                </div>
+              </div>
 
-                <p> Cards are ranked from 2 - Ace with Ace being the highest raking card.</p> 
-                
-                <p> At the beginning of each round, each player will flip their card and the player with the highest ranking card will win the round and collect both cards.</p> 
-                
-                <p>If each player flips the same card War is initiated.</p>
-                
-                <p>War Each play will lay 3 cards down and flip the 4th card. The player with the highest ranking 4th card will win the round and take all of the cards used during war. If the 4th card flipped is the same for each player another round of war is engaged.</p>
-                
-                <p>The game will end when one player has all the cards.</p>
         </div>
 
-        <div>
+        <!-- <div class='gameText' id='rules'>
+                <h3 id='instructions'>Instructions</h3>
+
+               
+
+        <div> -->
             <button class="newGame"  id='play-btn' onClick = "this.style.visibility= 'hidden';">New Game</button> 
         </div>
 
@@ -78,7 +86,12 @@
         </div>
 
     </div>
- <script src="js/app.js"></script>   
+
+<script src="js/app.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>   
 </body>
 </html> 
 
