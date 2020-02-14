@@ -168,13 +168,6 @@ const gameInit = () =>{
     console.log(deck.playerCards[0].value);
     console.log(deck.computerCards);
     console.log(deck.computerCards[0].value); 
-
-    // var gameContainerDOM = document.querySelector('.gameContainer')
-    
-    // gameContainerDOM.style.display = 'block'
-
-    // var diceDOM = document.querySelector('.dice')
-
 }
 
 const battle = () => {
