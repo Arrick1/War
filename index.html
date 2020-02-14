@@ -15,34 +15,27 @@
 
     <!-- HOME SCREEN -->
    <div class='rules-container'>
-
-        <div class= "gameText" id="header"> 
+        <div class= "gameText"> 
             <header>War!</header>
         </div> 
-
-        <div class="card" id="rules">
-            <h3 class="card-header" id='instructions'>Instructions:</h3>
-                <div class="card-body">
-                    <p>Cards are ranked from 2 - Ace with Ace being the highest raking card. </p>
-                    <p> At the beginning of each round, each player will flip their card and the player with the highest ranking card will win the round and collect both cards.</p> 
-                    <p>If each player flips the same card War is initiated.</p>
-                    <p>During war Each player will lay 3 cards down and flip the 4th card. The player with the highest ranking 4th card will win the round and take all of the cards used during war. If the 4th card flipped is the same for each player another round of war is engaged.</p>
-                    <p>The game will end when one player has all the cards.</p>
-                    <button class="newGame"  id='play-btn' onClick = "this.style.visibility= 'hidden';">New Game</button> 
-                </div>
-              </div>
-
+        <div class="row justify-content-center" id="game-rules">
+            <div class="col-lg-12 offset-0">
+                <div class="card text-center" id="rules">
+                    <h3 class="card-header" id='instructions'>Instructions:</h3>
+                        <div class="card-body">
+                            <p class="card-text">Cards are ranked from 2 - Ace with Ace being the highest raking card. </p>
+                            <p class="card-text"> At the beginning of each round, each player will flip their card and the player with the highest ranking card will win the round and collect both cards.</p> 
+                            <p class="card-text">If each player flips the same card War is initiated.</p>
+                            <p class="card-text">During war Each player will lay 3 cards down and flip the 4th card. The player with the highest ranking 4th card will win the round and take all of the cards used during war. If the 4th card flipped is the same for each player another round of war is engaged.</p>
+                            <p class="card-text">The game will end when one player has all the cards.</p>
+                        </div>
+                </div> 
+            </div>
         </div>
-
-        <!-- <div class='gameText' id='rules'>
-                <h3 id='instructions'>Instructions</h3>
-
-               
-
-        <div> -->
-            <button class="newGame"  id='play-btn' onClick = "this.style.visibility= 'hidden';">New Game</button> 
+        <br>
+        <div class="row">
+                <button class="newGame"  id='play-btn' onClick = "this.style.visibility= 'hidden';">New Game</button>
         </div>
-
    </div> 
 
 

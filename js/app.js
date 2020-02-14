@@ -186,7 +186,7 @@ const battle = () => {
 
 //Buttons
 // this start the game 
-$('.newGame').on('click', gameInit)
+$('#play-btn').on('click', gameInit)
 
 
 
