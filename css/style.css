@@ -84,6 +84,18 @@ body {
     padding-top: 4%;
 }
 
+#round{
+    font-family: 'Bree Serif';
+    font-size: 20px; 
+	/* font-weight: bolder;
+    padding-top: 30px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+    padding-left: 60px; 
+    width: 40%; */
+    color: #25E414;   
+}
+/* 
 .player-0-panel, .player-1-panel {
     width: 50%;
     float: left;
@@ -94,18 +106,16 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 
- /* ORIGIONAL CODE */
-
-.playField {
+/* .playField {
     padding-top: 30px;
     padding-right: 10px;
     padding-bottom: 15px;
     padding-left: 30px;
-}
-
+} */
+/* 
 #result {
 	font-size: 25px; 
 	font-weight: bolder;
@@ -115,31 +125,21 @@ body {
     padding-left: 30px; 
     width: 40%;
     color: white;
-}
-#round{
-    font-size: 20px; 
-	font-weight: bolder;
-    padding-top: 30px;
-    padding-right: 10px;
-    padding-bottom: 15px;
-    padding-left: 60px; 
-    width: 40%;
-    color: white;
-     
-}
+} */
 
+/* 
 .score{
     font-size: 20px;
     color: white; 
 
-}
+} */
 
-#pcard {
+/* #pcard {
     border: white
 
-}
+} */
 
-h2 {
+/* h2 {
     font-size: 20px; 
 	font-weight: bolder;
     padding-top: 30px;
@@ -148,10 +148,10 @@ h2 {
     padding-left: 60px; 
     width: 40%;
     color: white;
-}
+} */
 
-#cards{
+/* #cards{
     display: grid; 
     
-}
+} */
 

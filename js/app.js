@@ -73,7 +73,7 @@ class Deck {
         if (play1 < comp1) {
             const computerCard = this.computerCards.shift()
             const playerCard = this.playerCards.shift()
-            $("#round").text("Computer wins this round!")
+            $("#round").text("Computer wins!")
             this.computerCards.push(computerCard, playerCard);
             
          } 
@@ -82,7 +82,7 @@ class Deck {
          else if (comp1 < play1) {
             const computerCard = this.computerCards.shift()
             const playerCard = this.playerCards.shift()
-            $("#round").text("Player wins this round!")
+            $("#round").text("Player wins!")
             this.playerCards.push(computerCard,playerCard)
             console.log(this.playerCards[0].value);
             console.log(this.computerCards[0].value);
