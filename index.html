@@ -13,8 +13,8 @@
 </head>
 <body>
 
-    <!-- HOME SCREEN -->
-   <div class='rules-container'>
+    <!----------- HOME SCREEN -------------->
+   <div class="rules-container" id=play_field>
         <div class= "gameText"> 
             <header>War!</header>
         </div> 
@@ -32,59 +32,65 @@
                 </div> 
             </div>
         </div>
-        <br>
         <div class="row">
-                <button class="newGame"  id='play-btn' onClick = "this.style.visibility='hidden';">New Game</button>
+            <button class="newGame"  id='play_btn' >New Game</button>
         </div>
    </div> 
 
 
-    <!-- PLAY SCREEN -->
-    <div class="gameContainer clearfix">
+    <!----------------- PLAY SCREEN ----------------->
+    <div class="container-fluid">
+        <div class="game-container">
+            <div class="gameText" id="play-header"> <header>War!</header></div>
+                <div class="row"></div>
 
-        <div class= 'gameText' id="header"> <header>War!</header> </div>
-        
-        <div class="player-0-panel active">
-            <div class="player-name" id="name-0">Player 1</div>
-            <span  id="pDeck" class="pDeck card back-red"></span> 
-
+                    
+                    <!-- <div class="player-0-panel active">
+                        <div class="player-name" id="name-0">Player 1</div>
+                        <span  id="pDeck" class="pDeck card back-red"></span> 
             
-            <div class="player-score" id="score-0">43</div>
-            <div class="player-current-box">
-                <div class="player-current-label">Current</div>
-                <div class="player-current-score" id="current-0">11</div>
-            </div>
-        </div>
-
-        <div class="player-1-panel">
-                <div class="player-name" id="name-1">Player 2</div>
-
-                <span  id="cDeck" class="cDeck card back-blue"></span>
-                <div class="player-score" id="score-1">72</div>
-                <div class="player-current-box">
-                    <div class="player-current-label">Current</div>
-                    <div class="player-current-score" id="current-1">0</div>
+                        
+                        <div class="player-score" id="score-0">43</div>
+                        <div class="player-current-box">
+                            <div class="player-current-label">Current</div>
+                            <div class="player-current-score" id="current-0">11</div>
+                        </div>
+                    </div>
+            
+                    <div class="player-1-panel">
+                            <div class="player-name" id="name-1">Player 2</div>
+            
+                            <span  id="cDeck" class="cDeck card back-blue"></span>
+                            <div class="player-score" id="score-1">72</div>
+                            <div class="player-current-box">
+                                <div class="player-current-label">Current</div>
+                                <div class="player-current-score" id="current-1">0</div>
+                            </div>
+                    </div>             -->
+                    
+                    <div>
+                            <p class="result">Result</p> 
+                            <p id="round"></p>
+                        </div>
+                    <div class= "gameButtons">
+            
+                                <button class="deal">Deal</button>
+                            <br>
+                            <button value="Refresh Page" onClick="window.location.reload()">New Game</button>
+                    </div>
+            
                 </div>
-        </div>            
-        
-        <div>
-                <p class="result">Result</p> 
-                <p id="round"></p>
-            </div>
-        <div class= "gameButtons">
 
-                    <button class="deal">Deal</button>
-                <br>
-                <button value="Refresh Page" onClick="window.location.reload()">New Game</button>
-        </div>
 
     </div>
+    
 
 <script src="js/app.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>   
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
+
 </body>
 </html> 
 

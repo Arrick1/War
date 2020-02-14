@@ -113,10 +113,10 @@ class Deck {
 
            
         }
-        console.log(this.playerCards);
-        this.playerWar = []
-        this.computerWar = []
-        console.log(this.computerCards);
+        // console.log(this.playerCards);
+        // this.playerWar = []
+        // this.computerWar = []
+        // console.log(this.computerCards);
      }
 
      checkVal(val) {
@@ -156,7 +156,7 @@ let deck;
 
 // this will begin the game functions 
 const gameInit = () =>{
-    $('.rules-container').fadeOut("slow")
+    $('.rules-container').hide()
     deck = new Deck;
     deck.buildDeck(suits, faces);
     deck.shuffle();
@@ -168,6 +168,7 @@ const gameInit = () =>{
     console.log(deck.playerCards[0].value);
     console.log(deck.computerCards);
     console.log(deck.computerCards[0].value); 
+
 }
 
 const battle = () => {
@@ -178,9 +179,17 @@ const battle = () => {
 }
 
 //Buttons
-// this start the game 
-$('#play-btn').on('click', gameInit)
+$(document).ready(function(){
+    $('#play_btn').on('click', function(){
+    $('#play-field').toggle(8000)
+    $('.game-container').toggle()
+    gameInit()
+    })
 
+})
 
+$(document).ready(function(){
+    $('.deal').on('click', battle)
 
-$('.deal').on('click', battle)
+})
+

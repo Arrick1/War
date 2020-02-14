@@ -5,6 +5,9 @@ body {
     height: 100%;
 }
 
+
+/* <-------- Instruction  Div CSS ------> */
+
 .gameText{
     text-align: center;
     font-family: 'bowlby One';
@@ -12,10 +15,6 @@ body {
     font-size: 70px;
     padding-top: 4%;
 }
-
-
-
-/* <-------- Instruction CSS ------> */
 
 #game-rules{
     display: contents;
@@ -50,7 +49,7 @@ body {
 }
 
 
-#play-btn{
+#play_btn{
     font-family: 'Roboto';
     font-size: 20px;
     position: absolute;
@@ -58,13 +57,33 @@ body {
     transform: translateX(-50%);
     text-transform: uppercase;
     padding: 10px;
-    top: 520px;
     opacity: 0.7;
     margin-top: 60px;
 }
 
 
-/* TEST CODE */
+/* <-------- Play Field Div CSS ------> */
+
+.game-container{
+    display: none;
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    height:100%;
+    width: 100%
+}
+
+#play-header{
+    text-align: center;
+    font-family: 'bowlby One';
+    color: #C4C4C4;
+    font-size: 70px;
+    padding-top: 4%;
+}
+
 .player-0-panel, .player-1-panel {
     width: 50%;
     float: left;
@@ -75,15 +94,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-div {
-    display: block;
-}
-
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
 }
 
 
@@ -145,14 +155,3 @@ h2 {
     
 }
 
-.gameContainer{
-    display: none;
-    width: 1000px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-}
