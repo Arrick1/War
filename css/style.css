@@ -106,65 +106,26 @@ body {
     font-size: 20px; 
 }
 
-
-
-/* 
-.player-0-panel, .player-1-panel {
-    width: 50%;
-    float: left;
-    height: 600px;
-    padding: 100px;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-
-
-/* .playField {
-    padding-top: 30px;
-    padding-right: 10px;
-    padding-bottom: 15px;
-    padding-left: 30px;
-} */
-/* 
-#result {
-	font-size: 25px; 
-	font-weight: bolder;
-    padding-top: 30px;
-    padding-right: 10px;
-    padding-bottom: 15px;
-    padding-left: 30px; 
-    width: 40%;
-    color: white;
-} */
-
-/* 
-.score{
-    font-size: 20px;
-    color: white; 
-
-} */
-
-/* #pcard {
-    border: white
-
-} */
-
-/* h2 {
+.results{
+    font-family: 'Bree Serif';
     font-size: 20px; 
-	font-weight: bolder;
-    padding-top: 30px;
-    padding-right: 10px;
-    padding-bottom: 15px;
-    padding-left: 60px; 
-    width: 40%;
-    color: white;
-} */
+    color: #C4C4C4;
+}
 
-/* #cards{
-    display: grid; 
-    
-} */
+#new-game{
+    width: 175px;
+    height: 55px;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    font-size: 20px;
+}
+
+.deal{
+    width: 175px;
+    height: 55px;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    font-size: 20px;
+}
+
 
