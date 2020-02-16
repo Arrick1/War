@@ -37,14 +37,14 @@
 
 
     <!----------------- PLAY SCREEN ----------------->
-    <div class="container-fluid">
+    <div class="container">
         <div class="game-container">
             <div class="gameText" id="play-header"> <header>War!</header></div>
                 <div class="row justify-content-md-center">
                     
                     <div class="col-md-6">
                         <div class="text-center">
-                            <div class="player-name" id="name-0">Player 1</div>
+                            <div class="player-name">Player 1</div>
                             <span  id="pDeck" class="pDeck card back-red"></span> 
                     
                                 
@@ -56,9 +56,9 @@
                         </div>
                     </div>
 
-                <div class="col-md-6">
-                    <div class="text-center">
-                        <div class="player-name" id="name-1">Player 2</div>
+                    <div class="col-md-6">
+                        <div class="text-center">
+                            <div class="player-name">Player 2</div>
                             <span  id="cDeck" class="cDeck card back-blue"></span>
                                 
                             <!-- <div class="player-score" id="score-1">72</div>
@@ -66,12 +66,14 @@
                                     <div class="player-current-label">Current</div>
                                     <div class="player-current-score" id="current-1">0</div>
                                 </div> -->
-                    </div>  
-                </div>
+                        </div>  
+                    </div>
                 </div>
 
-                <div class="row">
-                    <p class="result">Result</p> <p id="round"></p>
+                <div class="row justify-content--center">
+                    <div class="col-md-8 offset-md-3">
+                        <p class="text-center">Results:</p> <p id="round"></p>
+                    </div>
                 </div>
                    
             

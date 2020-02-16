@@ -97,13 +97,13 @@ body {
 #round{
     font-family: 'Bree Serif';
     font-size: 20px; 
-	/* font-weight: bolder;
-    padding-top: 30px;
-    padding-right: 10px;
-    padding-bottom: 15px;
-    padding-left: 60px; 
-    width: 40%; */
     color: #25E414;   
+}
+
+.player-name{
+    color: #9A9A9A;
+    font-family: 'Bree Serif';
+    font-size: 20px; 
 }
 
 
